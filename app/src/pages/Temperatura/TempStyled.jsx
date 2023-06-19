@@ -12,8 +12,16 @@ export const ContentRoom = styled.div`
   align-items: center;
   gap: 1rem;
 
-  section {
+ section {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 2rem;
+    color: ${({ theme }) => theme.colors.red};
   }
 `;
 
