@@ -24,20 +24,20 @@ export default function Temperatura() {
     <>
       <Container>
         <ContentRoom>
-          {info.map((item, key) => {
-            return (
-              <section key={key}>
-                <div>
-                  <p>
-                    {item.temp}
-                    <code>&deg;C</code>
-                  </p>
-                </div>
-                {item.fire == 1 && (
+          {info.length == 1 &&
+            info.map((item, key) => {
+              return (
+                <section key={key}>
+                  {/* {alert("A localização detectou fogo")} */}
+                  <div>
+                    <p>
+                      {item.temp}
+                      <code>&deg;C</code>
+                    </p>
+                  </div>
                   <div>
                     <FireDetected>
                       <span>Fogo Detectado !</span>
-                      {/* {window.alert("Fogo Detectado")} */}
                       <Icon>
                         <div>
                           <ImFire size={30} />
@@ -45,10 +45,9 @@ export default function Temperatura() {
                       </Icon>
                     </FireDetected>
                   </div>
-                )}
-              </section>
-            );
-          })}
+                </section>
+              );
+            })}
           <img src="./imagens/MiniRoom.png" alt="3D Room" />
         </ContentRoom>
       </Container>
